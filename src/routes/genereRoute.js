@@ -12,7 +12,7 @@ const client = require('../Redies/radisconfig')
 //   const genres = await Genre.find().sort("-name");
 //   res.send(genres);
 // });
-router.get("/", async (req, res) => {
+router.get("/",async (req, res) => {
   const key = "genre";
 
   // Get data from Redis

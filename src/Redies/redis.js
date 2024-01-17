@@ -14,17 +14,17 @@ const setValue = (key, value) => {
 };
 
 // Get the value of a key from Redis
-// const getValue = (key, callback) => {
-//   client.get(key, (err, data) => {
-//     if (err) {
-//       console.error(err);
-//       callback(err, null);
-//     } else {
-//       const parsedData = JSON.parse(data);
-//       callback(null, parsedData);
-//     }
-//   });
-// };
+const getValue = (key, callback) => {
+  client.get(key, (err, data) => {
+    if (err) {
+      console.error(err);
+      callback(err, null);
+    } else {
+      const parsedData = JSON.parse(data);
+      callback(null, parsedData);
+    }
+  });
+};
 
 // Set a field in a hash in Redis
 const setHashField = (hashKey, field, value) => {
@@ -64,7 +64,7 @@ const keyExists = (key, callback) => {
 
 module.exports = {
   setValue,
-//   getValue,
+  getValue,
   setHashField,
   getHashField,
   keyExists,
